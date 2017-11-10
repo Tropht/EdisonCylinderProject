@@ -645,9 +645,11 @@ $('#metaInfoLargeActive').click(function(){
   // All Meta Info
   $('#allMetaImg').attr('src',cylinderHolder.cylinderTopURL);
   $('#allMetaTitle').html(cylinderHolder.cylinderTitle);
+  $('#allMetaNumber').html(cylinderHolder.cylinderNumber);
   $('#allMetaArtist').html(cylinderHolder.cylinderArtist);
   $('#allMetaTake').html(cylinderHolder.cylinderTake);
   $('#allMetaMold').html(cylinderHolder.cylinderMold);
+  $('#allMetaMonthYear').html(cylinderHolder.cylinderMonthYear);
   $('#allMetaComments').html(cylinderHolder.cylinderComments);
 
   $('#allMetadata').toggle();
@@ -926,6 +928,7 @@ cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', function($sc
 
 
 
+
   // Select Background Color
   var bgColors = ['red', 'orange', 'yellow','green','blue','indigo','violet'];
 
@@ -938,6 +941,7 @@ cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', function($sc
   cylinderData.getCylinderData().then(function(data){
     $scope.returnedCylinderData = data.data;
 
+    console.log($scope.returnedCylinderData);
 
     for(var i = 0; i < $scope.returnedCylinderData.length; i++){
 
@@ -992,8 +996,10 @@ cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', function($sc
     // Large Meta Info
     $('#largeCylinderImg').attr('src',this.item.cylinderTopURL);
     $('#largeCylinderName').html(this.item.cylinderTitle);
+    $('#largeCylinderNumber').html(this.item.cylinderNumber);
     $('#largeArtistName').html(this.item.cylinderArtist);
     $('#largeMoldNumber').html(this.item.cylinderMold);
+    $('#largeMonthYear').html(this.item.cylinderMonthYear);
     $('#largeTakeNumber').html(this.item.cylinderTake);
     $('#largeComments').html(this.item.cylinderComments);
 
