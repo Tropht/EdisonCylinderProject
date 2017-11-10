@@ -150,6 +150,7 @@ $(window).resize(function(){
 // ///////////////
 $('.navButton').on('click', function(){
 
+
   // Check to make sure we're not already on same section
   if($(this).attr('id') == 'libraryButton' && $('.active')[0].id == 'librarySection'){
     return;
@@ -911,6 +912,7 @@ cylinderApp.filter('searchForCylinder', function(){
         result.push(item);
       }
     });
+
 
     return result;
   }

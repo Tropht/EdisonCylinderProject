@@ -45,9 +45,9 @@
             </span>
           </div><!-- /input-group -->
         </div><!-- /form-group -->
-        <!-- <div class="form-group">
+        <div class="form-group">
           <button type="submit" id="add" class="btn btn-default pull-right" ng-click="openNewForm()">Add</button>
-        </div> -->
+        </div>
       </div><!-- /.col-lg-10 -->
     </div><!-- /.row -->
 
@@ -181,7 +181,7 @@
               <div class="col-sm-2">
                 <div class="checkbox">
                   <label>
-                    <input ng-model="checkbox.ucsb" type="checkbox" name="ucsb">in UCSB db
+                    <input ng-model="checkbox.ucsb" type="checkbox" name="ucsb">Not in UCSB db
                   </label>
                 </div>
               </div>
@@ -370,7 +370,7 @@
         <h3 class="text-center">User List</h3>
 
         <div class="userContainer" ng-repeat="user in usersData">
-          <!-- <input style="display: none;" val="{{ user.userID }}" readonly> -->
+
           <label>{{ user.username }}</label>
           <button type="button" name="button" ng-click="deleteUser()" class="btn btn-danger deleteUserButton">Delete</button>
         </div>

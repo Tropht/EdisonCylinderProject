@@ -183,12 +183,12 @@ cylinderAdminApp.controller('cylinderAdminCtrl', ['$scope', 'cylinderAdminData',
   // Get Data
   cylinderAdminData.getAdminCylinderData().then(function(data){
     $scope.returnedData = data.data;
-
+    console.log($scope.returnedData);
   });
 
   cylinderAdminUsers.getAdmins().then(function(data){
     $scope.usersData = data.data;
-  })
+  });
 
 
 
