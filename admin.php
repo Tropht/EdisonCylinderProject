@@ -73,7 +73,7 @@
 
 
         <form enctype="multipart/form-data" id="cylinderUpdateForm">
-          <input ng-model="cylinderId" name="id" style="display: none;" readonly>
+          <input id="updateCylinderId" ng-model="cylinderId" name="id" style="display: none;" readonly>
 
           <!-- Artist/Title/Record Label/Month Year -->
           <div class="col-sm-12">
@@ -194,6 +194,16 @@
               <label for="artist">Other Comments</label>
               <textarea ng-model="cylinderOtherComments" style="resize: none;" class="form-control" type="text" name="otherComments" value="" rows="7"></textarea>
             </div>
+
+            <!-- Upload Files -->
+            <!-- File Upload -->
+            <label>Cylinder Picture(500x500)</label>
+            <input type="file" name="updateCylinderTop" id="updateCylinderTop">
+            <label>Cylinder Audio</label>
+            <input type="file" name="updateCylinderAudio" id="updateCylinderAudio">
+
+            <progress id="updateProgressBar" max="100" style="width: 300px; height: 10px;"></progress>
+
             <div class="form-inline pull-right">
               <div class="btn btn-default" ng-click="closeEdit()">Cancel</div>
               <button name="btn_update" id="deleteCylinder" class="btn btn-danger">Delete</button>

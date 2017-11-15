@@ -15,15 +15,19 @@ $('#uploadAudio').click(function(){
 
 });
 
-// ////////
-// ajax
-// ////////
+// ////////////////////////////////////////
+// Upload/Update/Delte Files Through Ajax
+// ////////////////////////////////////////
+
+  // /////////////
+  // Add Cylinder
+  // /////////////
 $('#createNewCylinderButton').click(function(){
 
   $('#randomCylinderId').val(Date.now());//Create unique ID
 
 
-  // Handle Files
+  // Handle Files/ Find file types
   var pictureFile = $("#cylinderTop")[0].files[0];
   var audioFile = $("#cylinderAudio")[0].files[0];
 
@@ -57,22 +61,90 @@ $('#createNewCylinderButton').click(function(){
 
 });
 
+  // ////////////////
+  // Update Cylinder
+  // ////////////////
+// $('#updateCylinder').click(function(){
+//   var data = $('#cylinderUpdateForm').serialize();
+//
+//   $.ajax({
+//     data: data,
+//     type: "post",
+//     url: "php/update.php",
+//     success: function(data){
+//
+//       alert(data);
+//       window.location.reload();
+//     }
+//   })
+//
+// });
+
 $('#updateCylinder').click(function(){
-  var data = $('#cylinderUpdateForm').serialize();
 
-  $.ajax({
-    data: data,
-    type: "post",
-    url: "php/update.php",
-    success: function(data){
+  if(document.getElementById('updateCylinderTop').files.length == 0 && document.getElementById('updateCylinderAudio').files.length == 0){
 
-      alert(data);
-      window.location.reload();
+      var data = $('#cylinderUpdateForm').serialize();
+
+      $.ajax({
+        data: data,
+        type: "post",
+        url: "php/update.php",
+        success: function(data){
+
+          alert(data);
+          window.location.reload();
+        }
+      });
+  }
+  else{
+    // Handle Files/ Find file types
+    var pictureFile = $("#updateCylinderTop")[0].files[0];
+    var audioFile = $("#updateCylinderAudio")[0].files[0];
+
+    // if(pictureFile.type != "image/jpeg"){
+    //   alert("You must use a .jpg filetype for your image!");
+    //   return;
+    // }
+    // if(audioFile.type != "audio/mp3"){
+    //   alert("You must use a .mp3 filetype for your audio!");
+    //   return;
+    // }
+
+    // console.log(pictureFile.name + " | " + pictureFile.size + " | " + pictureFile.type);
+
+    var formdata = new FormData();
+    if(document.getElementById('updateCylinderTop').files.length == 0){
+      formdata.append("cylinderAudio", audioFile);
+    }else if(document.getElementById('updateCylinderAudio').files.length == 0){
+      formdata.append("cylinderTop", pictureFile);
+    }else{
+      formdata.append("cylinderTop", pictureFile);
+      formdata.append("cylinderAudio", audioFile);
     }
-  })
+    // formdata.append("cylinderTop", pictureFile);
+    // formdata.append("cylinderAudio", audioFile);
+    formdata.append("id", $('#updateCylinderId').val());
 
-})
 
+    var ajax = new XMLHttpRequest();
+
+    ajax.upload.addEventListener("progress", updateProgressHandler, false);
+    ajax.addEventListener("load", updateHandler, false);
+    ajax.addEventListener("error", errorHandler, false);
+    ajax.addEventListener("abort", abortHandler, false);
+    ajax.open("POST", "php/uploadFile.php");
+    ajax.send(formdata);
+
+    // Handle Text data (This is handled through the updateHandler function)
+  }
+
+
+});
+
+  // ////////////////
+  // Delete Cylinder
+  // ////////////////
 $('#deleteCylinder').click(function(){
 
   var confirm = window.confirm("Click 'OK' to delete cylinder");
@@ -93,8 +165,11 @@ $('#deleteCylinder').click(function(){
       window.location.reload();
     }
   })
-})
+});
 
+  // /////////
+  // Add User
+  // /////////
 $('#addUserButton').click(function(){
   $('#newUserId').val(Date.now());
 
@@ -110,7 +185,7 @@ $('#addUserButton').click(function(){
       window.location.reload();
     }
   })
-})
+});
 
 // Delete User at bottom of Angular section (ng-repeat forbids jquery click events)
 
@@ -125,6 +200,12 @@ var progressHandler = function(event){
   $("#status").innerHTML = Math.round(percent) + "% uploaded...please wait.";
   // console.log(percent);
 }
+var updateProgressHandler = function(event){
+  var percent = (event.loaded / event.total) * 100;
+  $("#updateProgressBar").val(Math.round(percent));
+  $("#status").innerHTML = Math.round(percent) + "% uploaded...please wait.";
+  // console.log(percent);
+}
 var completeHandler = function(event){
   alert("Upload Complete");
   // $("#status").innerHTML = event.target.responseText;
@@ -134,6 +215,22 @@ var completeHandler = function(event){
     data: data,
     type: "post",
     url: "php/post.php",
+    success: function(data){
+
+      alert(data);
+      window.location.reload();
+    }
+  });
+}
+var updateHandler = function(event){
+  alert("Upload Complete");
+  // $("#status").innerHTML = event.target.responseText;
+  // $("#progressBar").value = 0;
+  var data = $('#createForm').serialize();
+  $.ajax({
+    data: data,
+    type: "post",
+    url: "php/updateFile.php",
     success: function(data){
 
       alert(data);

@@ -941,8 +941,6 @@ cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', function($sc
   cylinderData.getCylinderData().then(function(data){
     $scope.returnedCylinderData = data.data;
 
-    console.log($scope.returnedCylinderData);
-
     for(var i = 0; i < $scope.returnedCylinderData.length; i++){
 
       $scope.returnedCylinderData[i].imageURL = randomCylinderImage();
