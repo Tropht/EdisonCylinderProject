@@ -25,6 +25,7 @@
         <i class="fa fa-sort-desc" style="display: none;" aria-hidden="true"></i>
         <div class="subMetaInfo">
           <h2><strong>Artist:</strong> {{ item.cylinderArtist }}</h2>
+          <h2><strong>Record Label:</strong> {{ item.cylinderRecordLabel }}</h2>
           <h2><strong>Number:</strong> {{ item.cylinderNumber }}</h2>
           <h2><strong>Take:</strong> {{ item.cylinderTake }}</h2>
           <h2><strong>Mold:</strong> {{ item.cylinderMold }}</h2>
@@ -61,6 +62,7 @@
       <span>
         <h1 id="largeCylinderName"></h1><br>
         <h2><strong>Artist: </strong></h2><em id="largeArtistName"></em><br>
+        <h2><strong>Record Label: </strong></h2><em id="largeRecordLabel"></em><br>
         <h2><strong>Number: </strong></h2><em id="largeCylinderNumber"></em><br>
         <h2><strong>Take: </strong></h2><em id="largeTakeNumber"></em><br>
         <h2><strong>Mold: </strong></h2><em id="largeMoldNumber"></em><br>

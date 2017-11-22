@@ -628,7 +628,9 @@ $('#metaInfoBanner').click(function(){
   // All Meta Info
   $('#allMetaImg').attr('src',cylinderNowPlaying.cylinderTopURL);
   $('#allMetaTitle').html(cylinderNowPlaying.cylinderTitle);
+  $('#allMetaNumber').html(cylinderNowPlaying.cylinderNumber);
   $('#allMetaArtist').html(cylinderNowPlaying.cylinderArtist);
+  $('#allMetaRecordLabel').html(cylinderNowPlaying.cylinderRecordLabel);
   $('#allMetaTake').html(cylinderNowPlaying.cylinderTake);
   $('#allMetaMold').html(cylinderNowPlaying.cylinderMold);
   $('#allMetaComments').html(cylinderNowPlaying.cylinderComments);
@@ -647,6 +649,7 @@ $('#metaInfoLargeActive').click(function(){
   $('#allMetaTitle').html(cylinderHolder.cylinderTitle);
   $('#allMetaNumber').html(cylinderHolder.cylinderNumber);
   $('#allMetaArtist').html(cylinderHolder.cylinderArtist);
+  $('#allMetaRecordLabel').html(cylinderHolder.cylinderRecordLabel);
   $('#allMetaTake').html(cylinderHolder.cylinderTake);
   $('#allMetaMold').html(cylinderHolder.cylinderMold);
   $('#allMetaMonthYear').html(cylinderHolder.cylinderMonthYear);
@@ -684,7 +687,6 @@ $(window).scroll(function(){
   if(screenWidth <= screenSizeChange){
     // Mobile
     if($(this).scrollTop() >= 90 ){
-      // console.log("Hello");
   		$('#cylinderPlayer').addClass("lockBar");
   	}
   	else{
@@ -927,8 +929,6 @@ cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', function($sc
   $scope.returnedCylinderData;
 
 
-
-
   // Select Background Color
   var bgColors = ['red', 'orange', 'yellow','green','blue','indigo','violet'];
 
@@ -947,6 +947,8 @@ cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', function($sc
       $scope.returnedCylinderData[i].backColor = randomColor();
 
     };
+
+    // console.log($scope.returnedCylinderData);
 
     // Select and set random cylinder
 
@@ -996,16 +998,13 @@ cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', function($sc
     $('#largeCylinderName').html(this.item.cylinderTitle);
     $('#largeCylinderNumber').html(this.item.cylinderNumber);
     $('#largeArtistName').html(this.item.cylinderArtist);
+    $('#largeRecordLabel').html(this.item.cylinderRecordLabel);
     $('#largeMoldNumber').html(this.item.cylinderMold);
     $('#largeMonthYear').html(this.item.cylinderMonthYear);
     $('#largeTakeNumber').html(this.item.cylinderTake);
     $('#largeComments').html(this.item.cylinderComments);
 
-
   }
 
-  // $scope.cylinderSquare.forEach(function(){
-  //   console.log("hello");
-  // })
 
 }]);//End Of controller

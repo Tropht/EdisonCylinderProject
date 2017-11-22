@@ -26,6 +26,10 @@
             There you can use the "Search" feature to find a cylinder by song title, artist, or even the year it was created.
           </p>
 
+          <p>
+            Disclaimer: We have tried to keep the cylinder content as close as possible to what was written and recorded at the time, and tell history as it was. With this, there may be certain content from the past that may be considered offensive to some people.
+          </p>
+
           <button class='btn' onclick="homeNavButtons()">Listen!</button>
         </span>
 
@@ -63,6 +67,9 @@
           </p>
           <p>
             Also, you may Adopt a Cylinder of your choice, which allows us to take a cylinder from our unarchived boxes, transcribe them, gather metadata, clean them up and post them on our site!  Currently, it takes about $60 to see that whole process through, and you get to listen to a new cylinder!  Click here to see what’s in boxes 4-10!
+          </p>
+          <p>
+            (Our donation system is currently under construction)
           </p>
 
           <button class='btn' onclick="homeNavButtons()">Donate!</button>

@@ -58,6 +58,7 @@
         <img id="allMetaImg" alt="Cylinder Player Image Cover">
         <h1>Title: <span id="allMetaTitle">Title</span></h1>
         <h2>Artist: <span id="allMetaArtist">Artist</span></h2>
+        <h2>Record Label: <span id="allMetaRecordLabel">Record Label</span></h2>
         <h2>Number: <span id="allMetaNumber">Number</span></h2>
         <h2>Take: <span id="allMetaTake">Take</span></h2>
         <h2>Mold: <span id="allMetaMold">Mold</span></h2>
