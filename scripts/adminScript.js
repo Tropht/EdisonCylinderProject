@@ -31,35 +31,35 @@ $('#createNewCylinderButton').click(function(){
   var pictureFile = $("#cylinderTop")[0].files[0];
   var audioFile = $("#cylinderAudio")[0].files[0];
 
-  console.log(pictureFile.type);
-  console.log(audioFile.type);
   if(pictureFile.type != "image/jpeg"){
     alert("You must use a .jpg filetype for your image!");
     return;
   }
-  if(audioFile.type != "audio/mp3"){
+  if(audioFile.type == "audio/mp3" || audioFile.type == "audio/mpeg"){
+    // console.log(pictureFile.name + " | " + pictureFile.size + " | " + pictureFile.type);
+
+    var formdata = new FormData();
+    formdata.append("cylinderTop", pictureFile);
+    formdata.append("cylinderAudio", audioFile);
+    formdata.append("id", $('#randomCylinderId').val());
+
+
+    var ajax = new XMLHttpRequest();
+
+    ajax.upload.addEventListener("progress", progressHandler, false);
+    ajax.addEventListener("load", completeHandler, false);
+    ajax.addEventListener("error", errorHandler, false);
+    ajax.addEventListener("abort", abortHandler, false);
+    ajax.open("POST", "php/uploadFile.php");
+    ajax.send(formdata);
+
+    // Handle Text data (This is handled through the completeHandler function)
+  }else{
     alert("You must use a .mp3 filetype for your audio!");
     return;
   }
 
-  // console.log(pictureFile.name + " | " + pictureFile.size + " | " + pictureFile.type);
 
-  var formdata = new FormData();
-  formdata.append("cylinderTop", pictureFile);
-  formdata.append("cylinderAudio", audioFile);
-  formdata.append("id", $('#randomCylinderId').val());
-
-
-  var ajax = new XMLHttpRequest();
-
-  ajax.upload.addEventListener("progress", progressHandler, false);
-  ajax.addEventListener("load", completeHandler, false);
-  ajax.addEventListener("error", errorHandler, false);
-  ajax.addEventListener("abort", abortHandler, false);
-  ajax.open("POST", "php/uploadFile.php");
-  ajax.send(formdata);
-
-  // Handle Text data (This is handled through the completeHandler function)
 
 });
 
