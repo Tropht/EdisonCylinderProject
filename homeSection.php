@@ -44,7 +44,7 @@
 
           <p>
             This feature allows you to view the cylinders that were published this month over a century ago.
-            Listen to what your ancestors might have listned to during their liesure time.
+            Listen to what your ancestors might have listened to during their liesure time.
           </p>
           <p>
             Turn back a few pages in history and enjoy some of the earliest recordings ever made.

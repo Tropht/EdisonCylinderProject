@@ -133,7 +133,7 @@
           </div>
           <div style="text-align:right;">
             <div style="text-align:center; display: inline-block;">
-              Label them Musical Wizard Before
+              Musical Wizard Before
               <audio style="display: block;" preload="none" controls>
                 <source src="audio/BeforeMusicalWizardAndTheBellBoy-Spencer&Cambell-Takeblank-Mold4-RIAA-V3(ToneArm)_01R.mp3" type="">
               </audio>

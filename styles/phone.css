@@ -326,6 +326,11 @@
         position: relative;
         padding-right: 5px;
         margin-bottom: 2.5px; }
+        #librarySection main #libraryContainer .cylinderSquare .cylinderBackColor {
+          position: absolute;
+          width: calc(100% - 5px);
+          height: 100%;
+          opacity: .8; }
         #librarySection main #libraryContainer .cylinderSquare img {
           width: 100%;
           height: 100%;

@@ -31,6 +31,8 @@ $('#createNewCylinderButton').click(function(){
   var pictureFile = $("#cylinderTop")[0].files[0];
   var audioFile = $("#cylinderAudio")[0].files[0];
 
+  console.log(pictureFile.type);
+  console.log(audioFile.type);
   if(pictureFile.type != "image/jpeg"){
     alert("You must use a .jpg filetype for your image!");
     return;
@@ -326,7 +328,7 @@ cylinderAdminApp.controller('cylinderAdminCtrl', ['$scope', 'cylinderAdminData',
     }
 
     $scope.checkbox.playable = changeToBoolean(this.item.crackedPlayable);
-    $scope.checkbox.unplayable = changeToBoolean(this.item.cracedUnplayable);
+    $scope.checkbox.unplayable = changeToBoolean(this.item.crackedUnplayable);
     $scope.checkbox.flatEdge = changeToBoolean(this.item.flatEdge);
     $scope.checkbox.ucsb = changeToBoolean(this.item.inUCSBdb);
 

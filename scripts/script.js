@@ -579,6 +579,11 @@ $(document).on('click','.pauseButton',function(){
   $('.pauseButton').toggle();
 });
 
+
+$(document).on('load',function(){
+  console.log($('.cylinderSquare').eq());
+})
+
 // //////////////
 // Load Cylinder
 // /////////////
@@ -912,7 +917,15 @@ cylinderApp.filter('searchForCylinder', function(){
 
     angular.forEach(arr, function(item){
 
-      if(item.cylinderTitle.toLowerCase().indexOf(searchCylinder) !== -1 || item.cylinderArtist.toLowerCase().indexOf(searchCylinder) !== -1){
+      if(
+        item.cylinderTitle.toLowerCase().indexOf(searchCylinder) !== -1 ||
+        item.cylinderArtist.toLowerCase().indexOf(searchCylinder) !== -1 ||
+        item.cylinderNumber.toLowerCase().indexOf(searchCylinder) !== -1 ||
+        item.cylinderMonthYear.toLowerCase().indexOf(searchCylinder) !== -1 ||
+        item.cylinderNumber.toLowerCase().indexOf(searchCylinder) !== -1 ||
+        item.cylinderRecordLabel.toLowerCase().indexOf(searchCylinder) !== -1
+        )
+      {
         result.push(item);
       }
     });
@@ -948,7 +961,7 @@ cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', function($sc
 
     };
 
-    // console.log($scope.returnedCylinderData);
+    console.log($scope.returnedCylinderData);
 
     // Select and set random cylinder
 

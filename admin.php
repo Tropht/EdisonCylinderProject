@@ -324,7 +324,7 @@
               <div class="col-sm-2">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="ucsb">in UCSB db
+                    <input type="checkbox" name="ucsb">Not in UCSB db
                   </label>
                 </div>
               </div>
