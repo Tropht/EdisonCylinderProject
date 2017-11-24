@@ -628,7 +628,7 @@ $(document).on('click','.loadCylinderButton',function(){
 // ////////////////
 // Meta Info Button
 // ////////////////
-$('#metaInfoBanner').click(function(){
+$('.allMetaInfo').click(function(){
 
   // All Meta Info
   $('#allMetaImg').attr('src',cylinderNowPlaying.cylinderTopURL);
@@ -936,7 +936,7 @@ cylinderApp.filter('searchForCylinder', function(){
 });
 
 // Controller for App
-cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', function($scope, cylinderData){
+cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', '$filter', function($scope, cylinderData, $filter){
 
   // Variables
   $scope.returnedCylinderData;
@@ -1017,6 +1017,17 @@ cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', function($sc
     $('#largeTakeNumber').html(this.item.cylinderTake);
     $('#largeComments').html(this.item.cylinderComments);
 
+  }
+
+  // ////////////////////////////
+  // Search This Months Cylinder
+  // ////////////////////////////
+
+  $scope.thisMonthSearch = function(){
+    var date = new Date();
+    console.log((date.getMonth() + 1) + '/' );
+    //////////
+      // return $filter('searchForCylinder')((date.getMonth() + 1) + '/');
   }
 
 

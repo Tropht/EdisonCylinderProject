@@ -1,7 +1,4 @@
 @media only screen and (max-width: 999em) {
-  ::-webkit-scrollbar {
-    display: none; }
-
   .active {
     z-index: -1; }
 
@@ -268,7 +265,8 @@
           font-family: "Arsenal", sans-serif; }
         #homeSection #homeContainer .homeBoxes p {
           margin: 10px;
-          font-family: "Rubik", sans-serif; }
+          font-family: "Rubik", sans-serif;
+          line-height: 1.35; }
         #homeSection #homeContainer .homeBoxes .left, #homeSection #homeContainer .homeBoxes .right, #homeSection #homeContainer .homeBoxes .full {
           width: 100%; }
           #homeSection #homeContainer .homeBoxes .left img, #homeSection #homeContainer .homeBoxes .right img, #homeSection #homeContainer .homeBoxes .full img {

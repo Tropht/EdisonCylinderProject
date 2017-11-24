@@ -9,6 +9,8 @@
 
 <!-- Nav Buttons -->
 
+<input id="testThing" style="display: none;" type="text" name="" value="02/">
+
 <div class="navButtonContainers" style="opacity: 1;">
   <i id="homeButton" style="cursor: pointer;" class="fa fa-home navButton activeNav" aria-hidden="true" ng-click="searchCylinder = undefined"><span>Home</span></i>
   <i id="libraryButton" style="cursor: pointer;" class="fa fa-music navButton" aria-hidden="true"><span>Library</span></i>

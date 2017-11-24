@@ -50,7 +50,7 @@
             Turn back a few pages in history and enjoy some of the earliest recordings ever made.
           </p>
 
-          <button class='btn' onclick="homeNavButtons()">Discover!</button>
+          <button class='btn' onclick="homeNavButtons()" ng-click="searchCylinder = undefined">Discover!</button>
         </span>
 
       </div>

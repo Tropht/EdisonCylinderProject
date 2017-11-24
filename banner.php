@@ -34,7 +34,7 @@
 
 <div id="cylinderPlayer">
 
-  <img id="cylinderPlayerImg"  alt="Banner Background" style="opacity: .8;">
+  <img id="cylinderPlayerImg" class="allMetaInfo" style="cursor:pointer;opacity: .8;" alt="Banner Background">
 
   <h1 id="cylinderPlayerTitle"></h1>
 
@@ -60,7 +60,7 @@
 
   </div>
 
-  <i id="metaInfoBanner" class="fa fa-question metaInfoButton" style="cursor: pointer;" aria-hidden="true"></i>
+  <i id="metaInfoBanner" class="fa fa-question metaInfoButton allMetaInfo" style="cursor: pointer;" aria-hidden="true"></i>
 
 
 

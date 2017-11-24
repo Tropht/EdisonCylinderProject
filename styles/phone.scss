@@ -1,6 +1,6 @@
 @media only screen and (max-width: 999em) {
 ::-webkit-scrollbar{
-  display:none;
+  // display:none;
 }
 
 // //////////
@@ -405,6 +405,7 @@ section{
   p{
     margin:10px;
     font-family: $standard-font;
+    line-height: 1.35;
   }
   .left,.right,.full{
     width: 100%;
