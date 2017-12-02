@@ -952,7 +952,12 @@ cylinderApp.controller('cylinderAppCtrl', ['$scope','cylinderData', '$filter', f
 
   // Get data
   cylinderData.getCylinderData().then(function(data){
-    $scope.returnedCylinderData = data.data;
+    //Assign variable and sort alphabetically
+    $scope.returnedCylinderData = data.data.sort(function(a,b){
+      var textA = a.cylinderTitle.toUpperCase();
+      var textB = b.cylinderTitle.toUpperCase();
+      return (textA < textB) ? -1 : (textA > textB) ? 1:0;
+    });
 
     for(var i = 0; i < $scope.returnedCylinderData.length; i++){
 
