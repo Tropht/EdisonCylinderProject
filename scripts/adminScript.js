@@ -359,6 +359,7 @@ cylinderAdminApp.controller('cylinderAdminCtrl', ['$scope', 'cylinderAdminData',
     $scope.checkbox.flatEdge = null;
     $scope.checkbox.ucsb = null;
     $scope.checkbox.website = null;
+    $scope.cylinderBoxNumber = null;
 
   }
 
