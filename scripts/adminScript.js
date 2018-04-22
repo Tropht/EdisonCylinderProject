@@ -292,7 +292,7 @@ cylinderAdminApp.controller('cylinderAdminCtrl', ['$scope', 'cylinderAdminData',
 
 
   $scope.getItemData = function(){
-    // console.log(this.item);
+    console.log(this.item);
 
     $('#cylinderFormInfo').scrollTop(0);
     $('#modal--bg').addClass('dark');
@@ -311,6 +311,7 @@ cylinderAdminApp.controller('cylinderAdminCtrl', ['$scope', 'cylinderAdminData',
     $scope.cylinderNumber = parseInt(this.item.cylinderNumber);
     $scope.cylinderTake = parseInt(this.item.cylinderTake);
     $scope.cylinderId = parseInt(this.item.cylinderID);
+    $scope.cylinderBoxNumber = parseInt(this.item.cylinderBoxNumber);
 
     $scope.checkbox = {
       unplayable: false,

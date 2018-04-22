@@ -148,7 +148,7 @@
               <div class="col-sm-3">
                 <label class="col-sm-6 col-form-label">Box Number</label>
                 <div class="col-sm-6">
-                  <input ng-model="cylinderMold" class="input-sm form-control" type="number" name="boxNumber" value="">
+                  <input ng-model="cylinderBoxNumber" class="input-sm form-control" type="number" name="boxNumber" value="">
                 </div>
               </div>
 
